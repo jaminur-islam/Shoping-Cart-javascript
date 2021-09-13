@@ -1,22 +1,21 @@
 // load Search item data
-const loadSearchProducts = async() => {
+const loadSearchProducts = async () => {
   // get input value
   const inputValue = document.getElementById('input-field');
   const inputText = inputValue.value;
   //Clear input value
   inputValue.value = '';
-  if(inputText === ''){
+  if (inputText === '') {
     return;
   }
   const url = `https://fakestoreapi.com/products/category/${inputText}`;
   const res = await fetch(url);
   const data = await res.json();
-  if(data.length === 0) {
+  if (data.length === 0) {
     return;
   }
   showProducts(data);
 }
-
 
 // Load data function
 const loadProducts = () => {
@@ -31,9 +30,16 @@ loadProducts();
 const showProducts = (products) => {
   // Clear container
   document.getElementById('single-container').textContent = '';
- const AllCart= document.getElementById("all-products");
- AllCart.textContent = '';
+  const AllCart = document.getElementById("all-products");
+  AllCart.textContent = '';
   for (const product of products) {
+
+    // rating star icons
+    const starTotal = 5;
+    const ratings = product.rating['rate'];
+    const starPercentage = (ratings / starTotal) * 100;
+    const starPercentageRounded = `${(Math.round(starPercentage / 10) * 10)}%`;
+
     const image = product['image'];
     const div = document.createElement("div");
     div.classList.add('single-product')
@@ -42,18 +48,22 @@ const showProducts = (products) => {
       </div>
       <h4 class="product-title">${product.title.slice(0,60)}</h4>
       <p class="product-category">Category : ${product.category}</p>
-      <span class="span">Rated: ${product.rating['count']} People </span>
+      <span class="span">Review : ${product.rating['count']} People </span>
       <br/>
-      <span class="span">Average Rating : ${product.rating['rate']}</span>
+      <span class="span">Rating :  
+      <section class="stars-outer">
+      <div class="stars-inner" style="width:${starPercentageRounded}"></div>
+      </section>
+            (${product.rating['rate']})
+      </span>
       <br/>
       <h3 class="product-price">Price: $ ${product.price}</h3>
       <button onclick="addToCart(${product.id},${product.price})" id="addToCart-btn" class="buy-now btn btn-primary me-2">Add to cart</button>
       <button id="details-btn" class="btn custom" onclick=getId(${product.id})>Details</button></div>
       `;
-      AllCart.appendChild(div);
+    AllCart.appendChild(div);
   }
 };
-
 
 // single product load
 const getId = async (id) => {
@@ -62,29 +72,36 @@ const getId = async (id) => {
   data = await res.json();
   displaySingleItem(data);
 }
-
-
 // dispaly single product
 const displaySingleItem = (data) => {
- const {title , price , description , image , rating} = data
- const singleContainer = document.getElementById('single-container');
- singleContainer.innerHTML = `
+  const {title, price,description, image,rating} = data
+  const singleContainer = document.getElementById('single-container');
+  const starTotal = 5;
+  const ratings1 = data.rating['rate'];
+  const starPercentage = (ratings1 / starTotal) * 100;
+  const starPercentageRounded = `${(Math.round(starPercentage / 10) * 10)}%`;
+
+  singleContainer.innerHTML = `
  <div class="col">
       <div class="card single-cart p-3 ">
         <img  src="${image}" class="card-img-top singleCardImg" alt="..." >
         <div class="card-body">
           <h3 class="card-title product-title">${title}</h3>
            <h3 class="product-price">Price : $${price} </h3>
-           <span class="span mb-4 product-category"> Rated: ${rating['count']} People </span> 
+           <span class="span mb-4 product-category"> Review : ${rating['count']} People </span> 
            <br/>
-           <span class="span product-category"> Average rating : ${rating['rate']} </span> 
+           <span class="span product-category"> Rating :  
+           <section class="stars-outer">
+           <div class="stars-inner span" style="width:${starPercentageRounded}"></div>
+           </section>
+           (${rating['rate']})
+           </span>
           <p class="card-text description">Description : ${description.slice(0,120)}</p>
         </div>
       </div>
     </div>
  `
 }
-
 // count product
 let count = 0;
 const addToCart = (id, price) => {
