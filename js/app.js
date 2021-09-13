@@ -48,6 +48,7 @@ const showProducts = (products) => {
       </div>
       <h4 class="product-title">${product.title.slice(0,60)}</h4>
       <p class="product-category">Category : ${product.category}</p>
+      <h3 class="product-price">Price: $ ${product.price}</h3>
       <span class="span">Review : ${product.rating['count']} People </span>
       <br/>
       <span class="span">Rating :  
@@ -57,9 +58,8 @@ const showProducts = (products) => {
             (${product.rating['rate']})
       </span>
       <br/>
-      <h3 class="product-price">Price: $ ${product.price}</h3>
-      <button onclick="addToCart(${product.id},${product.price})" id="addToCart-btn" class="buy-now btn btn-primary me-2">Add to cart</button>
-      <button id="details-btn" class="btn custom" onclick=getId(${product.id})>Details</button></div>
+      <button onclick="addToCart(${product.id},${product.price})" id="addToCart-btn" class="buy-now btn btn-primary me-2 mt-3">Add to cart</button>
+      <button id="details-btn" class="btn custom mt-3" onclick=getId(${product.id})>Details</button></div>
       `;
     AllCart.appendChild(div);
   }

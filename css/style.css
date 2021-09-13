@@ -78,7 +78,7 @@ h1 {
   content: "\f005 \f005 \f005 \f005 \f005";
   font-family: 'Font Awesome 5 Free';
   font-weight: 900;
-  color: #FDBE5B;
+  color: #cf8d23;
 }
 /*=== rating Star icons style ===*/
 
@@ -88,6 +88,8 @@ h1 {
   color: white;
   border: none;
   outline: none;
+  padding:7px 16px;
+
 }
 .custom1 {
   background-color: slateblue;
