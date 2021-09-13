@@ -69,7 +69,7 @@ const displaySingleItem = (data) => {
  const {title , price , description , image , rating} = data
  const singleContainer = document.getElementById('single-container');
  singleContainer.innerHTML = `
- <div class="col  ">
+ <div class="col">
       <div class="card single-cart p-3 ">
         <img  src="${image}" class="card-img-top singleCardImg" alt="..." >
         <div class="card-body">
@@ -78,7 +78,7 @@ const displaySingleItem = (data) => {
            <span class="span mb-4 product-category"> Rated: ${rating['count']} People </span> 
            <br/>
            <span class="span product-category"> Average rating : ${rating['rate']} </span> 
-          <p class="card-text description">Description : ${description.slice(0,100)}</p>
+          <p class="card-text description">Description : ${description.slice(0,120)}</p>
         </div>
       </div>
     </div>
