@@ -15,7 +15,6 @@ h1 {
   text-transform: uppercase;
   color: rgb(38, 66, 117);
   font-weight: bold;
-
 }
 /*====== Custom input field design ====== */
 .input-field {
@@ -46,6 +45,7 @@ h1 {
 .custom-btn:hover {
   background-color: rgb(218, 21, 86);
 }
+
 /*====== Custom input field design end ====== */
 
 /*=== rating Star icons style ===*/
@@ -116,7 +116,6 @@ h1 {
   border-radius: 8px;
   color: rgb(27, 36, 36);
 }
-
 
 .single-product:hover {
   box-shadow: 4px 4px 7px gray;
