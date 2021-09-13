@@ -45,8 +45,9 @@ h1 {
 
 .custom-btn:hover {
   background-color: rgb(218, 21, 86);
-
 }
+/*====== Custom input field design end ====== */
+
 /*=== rating Star icons style ===*/
 .span {
   margin-right: 10px;
@@ -92,8 +93,6 @@ h1 {
   background-color: slateblue;
   color: white;
 }
-/*====== Custom input field design end ====== */
-
 /*===== All product start ====*/
 #all-products {
   display: grid;

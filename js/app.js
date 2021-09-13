@@ -74,7 +74,7 @@ const getId = async (id) => {
 }
 // dispaly single product
 const displaySingleItem = (data) => {
-  const {title, price,description, image,rating} = data
+  const {title,price,description,image,rating} = data
   const singleContainer = document.getElementById('single-container');
   const starTotal = 5;
   const ratings1 = data.rating['rate'];
