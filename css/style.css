@@ -64,7 +64,7 @@ h1 {
   content: "\f005 \f005 \f005 \f005 \f005";
   font-family: 'Font Awesome 5 Free';
   font-weight: 900;
-  color: rgb(189, 176, 176);
+  color: rgb(158, 137, 137);
 }
  .stars-inner {
   position: absolute;
@@ -78,13 +78,13 @@ h1 {
   content: "\f005 \f005 \f005 \f005 \f005";
   font-family: 'Font Awesome 5 Free';
   font-weight: 900;
-  color: #cf8d23;
+  color: #338a7a;
 }
 /*=== rating Star icons style ===*/
 
 /*====button====== */
 .custom {
-  background-color: rgb(184, 55, 173);
+  background-color: rgba(206, 0, 189, 0.733);
   color: white;
   border: none;
   outline: none;
@@ -108,7 +108,7 @@ h1 {
 
 /*==== Single product ====*/
 .single-product {
-  background-color: rgb(233, 229, 229);
+  background: linear-gradient(white,white,rgba(163, 1, 136, 0.568));
   height: 400px;
   margin: 10px;
   margin-bottom: 30px;
@@ -140,7 +140,7 @@ h1 {
   color: rgb(7, 61, 109);
 }
 .product-price {
-  color: rgba(163, 4, 97, 0.774);
+  color: rgba(252, 17, 154, 0.774);
 }
 /*==== cart design ====*/
 .cart {
@@ -152,7 +152,8 @@ h1 {
   position: fixed;
   top: 148px;
   right: 50px;
-  background-color: rgb(175, 172, 172);
+  background: linear-gradient(rgba(141, 186, 216, 0.356),rgba(172, 66, 154, 0.281));
+  
 }
 .cart-main {
   padding-right: 30px;
@@ -160,12 +161,13 @@ h1 {
 
 /*===single cart start==== */
 .single-cart {
-  background-color: rgb(213, 216, 205);
+  background: linear-gradient(white,white,rgba(163, 1, 136, 0.39));
   margin-bottom: 10px;
   margin-top: 8px;
   border-radius: 10px;
   width: 350px;
   height: auto;
+  border: none;
 
 }
 .singleCardImg {
